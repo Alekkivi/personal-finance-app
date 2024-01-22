@@ -1,9 +1,9 @@
 Commands to create the database on your device that the personal-finance-app uses
 
-CREATE DATABASE personal-finance-app;
-USE personal-finance-app;
+CREATE DATABASE personal_finance_app;
+USE personal_finance_app;
 
-CREATE TABLE expenses-monthly
+CREATE TABLE expenses_monthly
 (
     id               INT unsigned NOT NULL AUTO_INCREMENT,
     name             VARCHAR(150) NOT NULL,
@@ -12,12 +12,12 @@ CREATE TABLE expenses-monthly
     PRIMARY KEY      (id)
 );
 
-CREATE TABLE income-monthly
+CREATE TABLE income_monthly
 (
     id                 INT unsigned NOT NULL AUTO_INCREMENT,
     name               VARCHAR(150) NOT NULL,
     amount             INT unsigned NOT NULL,
-    receiving-date     DATE NOT NULL,
+    receiving_date     DATE NOT NULL,
     PRIMARY KEY        (id)
 );
 
