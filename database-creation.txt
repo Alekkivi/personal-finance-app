@@ -1,0 +1,30 @@
+Commands to create the database on your device that the personal-finance-app uses
+
+CREATE DATABASE personal-finance-app;
+USE personal-finance-app;
+
+CREATE TABLE expenses-monthly
+(
+    id               INT unsigned NOT NULL AUTO_INCREMENT,
+    name             VARCHAR(150) NOT NULL,
+    amount           INT unsigned NOT NULL,
+    expiration       DATE NOT NULL,
+    PRIMARY KEY      (id)
+);
+
+CREATE TABLE income-monthly
+(
+    id                 INT unsigned NOT NULL AUTO_INCREMENT,
+    name               VARCHAR(150) NOT NULL,
+    amount             INT unsigned NOT NULL,
+    receiving-date     DATE NOT NULL,
+    PRIMARY KEY        (id)
+);
+
+CREATE TABLE balance
+(
+    id              INT unsigned NOT NULL AUTO_INCREMENT,
+    name            VARCHAR(150) NOT NULL,
+    amount          INT unsigned NOT NULL,
+    PRIMARY KEY     (id)
+);
