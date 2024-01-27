@@ -6,25 +6,38 @@ USE personal_finance_app;
 CREATE TABLE expenses_monthly
 (
     id               INT unsigned NOT NULL AUTO_INCREMENT,
-    name             VARCHAR(150) NOT NULL,
+    owner            VARCHAR(150) NOT NULL,
+    expense_name     VARCHAR(150) NOT NULL,
     amount           INT unsigned NOT NULL,
     expiration       DATE NOT NULL,
+    accounted_for    DATE NOT NULL,
     PRIMARY KEY      (id)
 );
 
 CREATE TABLE income_monthly
 (
     id                 INT unsigned NOT NULL AUTO_INCREMENT,
-    name               VARCHAR(150) NOT NULL,
+    owner              VARCHAR(150) NOT NULL,
+    income_name        VARCHAR(150) NOT NULL,
     amount             INT unsigned NOT NULL,
     receiving_date     DATE NOT NULL,
+    accounted_for      DATE NOT NULL,
     PRIMARY KEY        (id)
 );
 
 CREATE TABLE balance
 (
     id              INT unsigned NOT NULL AUTO_INCREMENT,
+    owner           VARCHAR(150) NOT NULL,
     name            VARCHAR(150) NOT NULL,
     amount          INT unsigned NOT NULL,
+    PRIMARY KEY     (id)
+);
+
+CREATE TABLE user_credentials
+(
+    id               INT unsigned NOT NULL AUTO_INCREMENT,
+    username         VARCHAR(150) NOT NULL,
+    password_hash    VARCHAR(150) NOT NULL,
     PRIMARY KEY     (id)
 );
