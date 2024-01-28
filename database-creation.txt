@@ -1,12 +1,10 @@
-Commands to create the database on your device that the personal-finance-app uses
-
 CREATE DATABASE personal_finance_app;
 USE personal_finance_app;
 
 CREATE TABLE expenses_monthly
 (
     id               INT unsigned NOT NULL AUTO_INCREMENT,
-    owner            VARCHAR(150) NOT NULL,
+    username            VARCHAR(150) NOT NULL,
     expense_name     VARCHAR(150) NOT NULL,
     amount           INT unsigned NOT NULL,
     expiration       DATE NOT NULL,
@@ -17,7 +15,7 @@ CREATE TABLE expenses_monthly
 CREATE TABLE income_monthly
 (
     id                 INT unsigned NOT NULL AUTO_INCREMENT,
-    owner              VARCHAR(150) NOT NULL,
+    username              VARCHAR(150) NOT NULL,
     income_name        VARCHAR(150) NOT NULL,
     amount             INT unsigned NOT NULL,
     receiving_date     DATE NOT NULL,
@@ -28,13 +26,32 @@ CREATE TABLE income_monthly
 CREATE TABLE user_info
 (
     id                      INT unsigned NOT NULL AUTO_INCREMENT,
-    information_owner       VARCHAR(150) NOT NULL,
+    username       VARCHAR(150) NOT NULL,
     savings_base            INT unsigned NOT NULL,
-    yearly_tax              INT unsigned NOT NULL,
     debt                    INT unsigned,
     last_login              DATE NOT NULL,
     
     PRIMARY KEY              (id)
+);
+
+CREATE TABLE earned_wage
+(
+    id               INT unsigned NOT NULL AUTO_INCREMENT,
+    username         VARCHAR(150) NOT NULL,
+    month            VARCHAR(150) NOT NULL,
+    wage_ammout      INT unsigned, NOT NULL,
+    yearly_tax       INT unsigned NOT NULL,
+    PRIMARY KEY     (id)
+);
+
+CREATE TABLE kela_limits
+(
+    id               I      NT unsigned NOT NULL AUTO_INCREMENT,
+    username                VARCHAR(150) NOT NULL,
+    start_date              DATE NOT NULL,
+    end_date                DATE NOT NULL,
+    time_period_limit       INT unsigned NOT NULL,
+    PRIMARY KEY             (id)
 );
 
 CREATE TABLE user_credentials

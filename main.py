@@ -2,6 +2,7 @@ from login import *
 from main_menu import *
 
 
+
 try:
     user = LoginWindow()
     username = user.username
