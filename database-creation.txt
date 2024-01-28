@@ -25,13 +25,16 @@ CREATE TABLE income_monthly
     PRIMARY KEY        (id)
 );
 
-CREATE TABLE balance
+CREATE TABLE user_info
 (
-    id              INT unsigned NOT NULL AUTO_INCREMENT,
-    owner           VARCHAR(150) NOT NULL,
-    name            VARCHAR(150) NOT NULL,
-    amount          INT unsigned NOT NULL,
-    PRIMARY KEY     (id)
+    id                      INT unsigned NOT NULL AUTO_INCREMENT,
+    information_owner       VARCHAR(150) NOT NULL,
+    savings_base            INT unsigned NOT NULL,
+    yearly_tax              INT unsigned NOT NULL,
+    debt                    INT unsigned,
+    last_login              DATE NOT NULL,
+    
+    PRIMARY KEY              (id)
 );
 
 CREATE TABLE user_credentials
